@@ -13,7 +13,7 @@ export const BASE_PATH = resolve(process.cwd(), '.sveltepress')
 const SVELTEPRESS_SITE_CONFIG_MODULE = 'virtual:sveltepress/site'
 
 // only the src/routes/**/*.+(page|layout).(svelte|md) will need to be wrapped by theme.pageLayout
-export const PAGE_OR_LAYOUT_RE = /\/src\/routes(\/[\(\)\[\]\w- ]+)*\/\+(?:page|layout)(@[\w-]*)?\.(?:svelte|md)$/
+export const PAGE_OR_LAYOUT_RE = /\/src\/routes\/blogs(\/[\(\)\[\]\w- ]+)*\/\+(?:page|layout)(@[\w-]*)?\.(?:svelte|md)$/
 
 if (!existsSync(BASE_PATH))
   mkdirSync(BASE_PATH, { recursive: true })
@@ -103,7 +103,7 @@ function isPage(path: string) {
 }
 
 function isRootLayout(path: string) {
-  return path.endsWith('src/routes/+layout.svelte') || path.endsWith('src/routes/+layout.md')
+  return path.endsWith('src/routes/blogs/+layout.svelte') || path.endsWith('src/routes/blogs/+layout.md')
 }
 
 export default sveltepress
